@@ -22031,8 +22031,7 @@ A rede neural profunda, utilizada neste protótipo possui a arquitetura ilustrad
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#PESOS_SALVOS = &#39;ck_cnn_weights_t10_faces.hdf&#39;</span>
-<span class="n">MODELO_SALVO_JSON</span> <span class="o">=</span> <span class="s1">&#39;./deep_emotive_model_t10_faces.json&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MODELO_SALVO_JSON</span> <span class="o">=</span> <span class="s1">&#39;./deep_emotive_model_t10_faces.json&#39;</span>
 <span class="n">MELHOR_PESO</span> <span class="o">=</span> <span class="s1">&#39;./pesos/pesos_teste_10-266-0.96.3.hdf5&#39;</span>
 </pre></div>
 
@@ -23183,6 +23182,45 @@ D1CfMtIJ//XTAAAAAElFTkSuQmCC
 >
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Salvando o modelo criado</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Salvando o modelo...&#39;</span><span class="p">)</span>
+<span class="c1"># serialize model para formato JSON</span>
+<span class="n">MODELO_SALVO_JAFFE</span> <span class="o">=</span> <span class="s1">&#39;./transfer learning/jaffeimages/model-transfer-learning-jaffe.json&#39;</span>
+<span class="n">model_json</span> <span class="o">=</span> <span class="n">loaded_model</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">MODELO_SALVO_JAFFE</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">json_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">model_json</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Modelo salvo com sucesso!&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Salvando o modelo...
+Modelo salvo com sucesso!
+</pre>
+</div>
 </div>
 
 </div>
