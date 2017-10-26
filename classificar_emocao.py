@@ -25,6 +25,8 @@ from keras.models import model_from_json, load_model
 from keras import backend as K
 from keras import optimizers
 import os
+from sklearn.metrics import classification_report, confusion_matrix, precision_score, recall_score, f1_score, cohen_kappa_score
+
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
@@ -187,7 +189,7 @@ def main(argv):
 	loaded_model = model_from_json(loaded_model_json)
 	print('Modelo carregado com sucesso!\n')
 	
-	MELHORES_PESOS = 'pesos_teste_10-266-0.96.3.hdf5'
+	MELHORES_PESOS = './pesos/pesos_teste_10-266-0.96.3.hdf5'
 	# Carregando o melhor pesos do checkout para para o novo modelo
 	print("Carregando os melhores pesos...")
 	loaded_model.load_weights(MELHORES_PESOS)
@@ -213,21 +215,30 @@ def main(argv):
 	y_probabilidade = loaded_model.predict(X_test, batch_size=32, verbose=1)
 	predicted = [np.argmax(prob) for prob in y_probabilidade]
 	
+	print(y_probabilidade[0])
 	# imagem classificada
 	if flag:
-		print('Classificando imagens...\n')
-		for index, p in enumerate(predicted):
-			for i, emocao in enumerate(classes_emocoes):
-					if i == 3:
-						print('probabilidade da emocao: {}:\t\t %.2f%%'.format(emocao) % y_probabilidade[index][i])
-					elif i == 5:
-						print('probabilidade da emocao: {}:\t\t %.2f%%'.format(emocao) % y_probabilidade[index][i])
-					else:
-						print('probabilidade da emocao: {}:\t%.2f%%'.format(emocao) % y_probabilidade[index][i])
-			print()
-			print('Emocao classificada pela rede:',classes_emocoes[p])
-			print()
-			print('*' * 50)
+		#print(classification_report(np.argmax(y_probabilidade, axis=1), predicted, target_names=classes_emocoes))
+		predicoes = [classes_emocoes[x] for x in predicted]
+		probs = [prob for prob in y_probabilidade]
+		
+		for index, emocao in enumerate(predicted):
+			print('Imagem {}, probabilidade da emocao: {}:\t %.2f%%'.format(index, classes_emocoes[emocao]) % np.max(probs[index]))
+		
+		#print(predicoes)
+		#print('Classificando imagens...\n')
+		#for index, p in enumerate(predicted):
+		#	for i, emocao in enumerate(classes_emocoes):
+		#			if i == 3:
+		#				print('probabilidade da emocao: {}:\t\t %.2f%%'.format(emocao) % y_probabilidade[index][i])
+		#			elif i == 5:
+		#				print('probabilidade da emocao: {}:\t\t %.2f%%'.format(emocao) % y_probabilidade[index][i])
+		#			else:
+		#				print('probabilidade da emocao: {}:\t%.2f%%'.format(emocao) % y_probabilidade[index][i])
+		#	print()
+		#	print('Emocao classificada pela rede:',classes_emocoes[p])
+		#	print()
+		print('*' * 50)
 			
 	else:
 		print('Classificando a imagem...\n')
