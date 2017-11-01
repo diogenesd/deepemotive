@@ -215,7 +215,7 @@ def main(argv):
 	y_probabilidade = loaded_model.predict(X_test, batch_size=32, verbose=1)
 	predicted = [np.argmax(prob) for prob in y_probabilidade]
 	
-	print(y_probabilidade[0])
+	# print(y_probabilidade[0])
 	# imagem classificada
 	if flag:
 		#print(classification_report(np.argmax(y_probabilidade, axis=1), predicted, target_names=classes_emocoes))
