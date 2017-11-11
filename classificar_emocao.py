@@ -181,7 +181,7 @@ def main(argv):
 	print('*' * 50)
 	# Carregando o modelo salvo
 	# Lendo o modelo salvo em arquivo para um novo modelo
-	MODELO_SALVO_JSON = 'deep_emotive_model_t10_faces.json'
+	MODELO_SALVO_JSON = './modelos/deep_emotive_model_t10_faces.json'
 	print("Carregando o modelo...")
 	json_file = open(MODELO_SALVO_JSON, 'r')
 	loaded_model_json = json_file.read()
@@ -189,7 +189,7 @@ def main(argv):
 	loaded_model = model_from_json(loaded_model_json)
 	print('Modelo carregado com sucesso!\n')
 	
-	MELHORES_PESOS = './pesos/pesos_teste_10-266-0.96.3.hdf5'
+	MELHORES_PESOS = './pesos/pesos_teste_10-266-0.98.7.hdf5'
 	# Carregando o melhor pesos do checkout para para o novo modelo
 	print("Carregando os melhores pesos...")
 	loaded_model.load_weights(MELHORES_PESOS)

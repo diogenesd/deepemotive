@@ -249,7 +249,7 @@ def main(argv):
 	print('*' * 50)
 	# Carregando o modelo salvo
 	# Lendo o modelo salvo em arquivo para um novo modelo
-	MODELO_SALVO_JSON = 'deep_emotive_model_t10_faces.json'
+	MODELO_SALVO_JSON = './modelos/deep_emotive_model_t10_faces.json'
 	print("Carregando o modelo...")
 	json_file = open(MODELO_SALVO_JSON, 'r')
 	loaded_model_json = json_file.read()
@@ -258,7 +258,7 @@ def main(argv):
 	print('Modelo carregado com sucesso!\n')
 	
 	### CARREGAR MELHORES PESOS DE TTREINAMENTO DA REDE DEEPEMOTIVE ###
-	MELHORES_PESOS = 'pesos_teste_10-266-0.96.3.hdf5'
+	MELHORES_PESOS = '/pesos/pesos_teste_10-266-0.96.3.hdf5'
 	# Carregando o melhor pesos do checkout para para o novo modelo
 	print("Carregando os melhores pesos...")
 	loaded_model.load_weights(MELHORES_PESOS)
@@ -293,7 +293,7 @@ def main(argv):
 	
 	### TREINANDO O CLASSIFICADOR ###
 	# chekpoint para salvar o mehlor aprendizado enter as epocas
-	filepath="./transfer learning/jaffeimages/checkpoint-transfer-learning-jaffe-{epoch:02d}-{val_acc:.2f}.hdf5"
+	filepath="./pesos/checkpoint-transfer-learning-jaffe-{epoch:02d}-{val_acc:.2f}.hdf5"
 	checkpoint = ModelCheckpoint(filepath,  # caminho para o modelo salvo
 								 monitor= 'val_acc', # qual parametro vai acompanhar
 								 verbose=0, # verbosity - 0 or 1
@@ -306,7 +306,7 @@ def main(argv):
 	history = loaded_model.fit(X_train, Y_train, validation_data=(X_test, Y_test), callbacks=callback_list, epochs=30, batch_size=128, verbose=0)
 	print('Treinanmeto finalizado!')
 	
-	MELHOR_PESO = './transfer learning/jaffeimages/checkpoint-transfer-learning-jaffe-13-0.93.hdf5'
+	MELHOR_PESO = './pesos/checkpoint-transfer-learning-jaffe-29-0.97.67.hdf5'
 	# Carregando o melhor pesos do checkout para para o novo modelo
 	print("Carregando os melhores pesos...")
 	loaded_model.load_weights(MELHOR_PESO)
