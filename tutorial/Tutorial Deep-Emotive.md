@@ -1,4 +1,4 @@
-# TUTORIAL INSTALAÇÃO DEEP-EMOTIVE #
+# TUTORIAL DEEP-EMOTIVE #
 
 DEEP-EMOTIVE
 Trabalho de conclusão de curso - Ciência da Computação - FURB - 2017
