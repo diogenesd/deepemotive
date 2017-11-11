@@ -18,13 +18,13 @@ Numpy, Matplotlib.</p>
 <p>O trabalho proposto alcançou os objetivos pré-estabelecidos, bem como, apresenta resultados positivos, além do esperado. 
 Este foi capaz de reconhecer e segmentar automaticamente uma face na imagem utilizando técnicas de visão computacional. 
 As faces segmentadas deram origem a uma nova base de dados. O trabalho desenvolvido implementou um classificador de emoções capaz de 
-<b>reconhecer oito emoções, alcançando 96,33% de precisão</b>. As duas emoções reconhecidas e que não estavam na proposta inicial são desprezo 
+<b>reconhecer oito emoções, alcançando 98,71% de precisão</b>. As duas emoções reconhecidas e que não estavam na proposta inicial são desprezo 
 e neutra. Para tanto, foi criado uma rede neural convolucional, utilizando a topologia do Aprendizado Profundo, que realizou a 
 extração de características relevantes para o reconhecimento das emoções.</p>
 
 <p>Adicionalmente, foi implementada a técnica de Transferência de Aprendizado, com o objetivo de validar o aprendizado obtido pelo 
 classificador de emoções proposto, bem como para investigar suas limitações. Os resultados obtidos foram satisfatórios quando 
-aplicado a transferência de aprendizado na base de dados Japanese Female Facial Expression (JAFFE), atingindo uma <b>precisão de 93,02%</b>. 
+aplicado a transferência de aprendizado na base de dados Japanese Female Facial Expression (JAFFE), atingindo uma <b>precisão de 97.67%</b>. 
 O JAFFE possui imagens similares a base de dados utilizadas para o treinamento da rede DeepEmotive. 
 Com este resultado é possível concluir que o DeepEmotive é eficaz no reconhecimento automático de expressões faciais de outras 
 bases de dados que sejam relativamente similares a base de dados utilizada para o mesmo, porém não se limitando somente a esta. 
@@ -32,7 +32,7 @@ Este pode auxiliar a comunidade tecnológica na geração de novos algoritmos co
 automaticamente as emoções através de expressões faciais.</p>
 
 <p>Uma limitação apresentada pelo protótipo pode ser observada quando a técnica de transferência de aprendizado é aplicada 
-na base de dados Facial Expression Recognition 2013 (FER-2013). O protótipo apresentou baixa assertividade, alcançado <b>60,62% de 
+na base de dados Facial Expression Recognition 2013 (FER-2013). O protótipo apresentou baixa assertividade, alcançado <b>60.71% de 
 precisão.</b> Uma das razões da baixa assertividade é que a base de dados FER-2013 possui imagens dissimilares às bases de dados citadas anteriormente, 
 contendo imagens com problemas que ainda são desafiadores para a área de visão computacional, como oclusão e ruido. No entanto, 
 o resultado foi superior à taxa de escolha randômica de 50%.</p>
