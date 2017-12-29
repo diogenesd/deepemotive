@@ -17,6 +17,10 @@ no reconhecimento visual de objetos através do aprendizado de máquina, o Apren
 raiva; desgosto; medo; alegria; tristeza; surpresa, através da análise de expressões faciais. Para tanto, foram utilizadas imagens oriundas
 da base de dados Cohn-Kanade AU-Coded Expression Database Version 2 (LUCEY et. al. 2010).</p>
 
+<p align="center"> 
+  <img src="imagens/emocoes preditas.png" alt="Emoções preditas" align="middle">
+</p>
+
 <p>Foi utilizado a linguagem de programação Python, a ferramenta Jupyter Notebook, assim com os frameworks Keras, OpenCV, Scikit Learn, 
 Numpy, Matplotlib.</p>
 
@@ -27,6 +31,10 @@ As faces segmentadas deram origem a uma nova base de dados. O trabalho desenvolv
 e neutra. Para tanto, foi criado uma rede neural convolucional, utilizando a topologia do Aprendizado Profundo, que realizou a 
 extração de características relevantes para o reconhecimento das emoções.</p>
 
+<p align="center"> 
+  <img src="imagens/matrix confusao.png" alt="Matriz de confusão Deep Emotive" align="middle">
+</p>
+
 <p>Adicionalmente, foi implementada a técnica de Transferência de Aprendizado, com o objetivo de validar o aprendizado obtido pelo 
 classificador de emoções proposto, bem como para investigar suas limitações. Os resultados obtidos foram satisfatórios quando 
 aplicado a transferência de aprendizado na base de dados Japanese Female Facial Expression (JAFFE), atingindo uma <b>precisão de 97.67%</b>. 
@@ -36,11 +44,19 @@ bases de dados que sejam relativamente similares a base de dados utilizada para 
 Este pode auxiliar a comunidade tecnológica na geração de novos algoritmos computacionais, que, baseado nesta arquitetura reconhece 
 automaticamente as emoções através de expressões faciais.</p>
 
+<p align="center"> 
+  <img src="imagens/matrix jaffe.png" alt="Matriz de confusão JAFFE" align="middle">
+</p>
+
 <p>Uma limitação apresentada pelo protótipo pode ser observada quando a técnica de transferência de aprendizado é aplicada 
 na base de dados Facial Expression Recognition 2013 (FER-2013). O protótipo apresentou baixa assertividade, alcançado <b>60.71% de 
 precisão.</b> Uma das razões da baixa assertividade é que a base de dados FER-2013 possui imagens dissimilares às bases de dados citadas anteriormente, 
 contendo imagens com problemas que ainda são desafiadores para a área de visão computacional, como oclusão e ruido. No entanto, 
 o resultado foi superior à taxa de escolha randômica de 50%.</p>
+
+<p align="center"> 
+  <img src="imagens/matrix fer2013.png" alt="Matriz de confusão FER2013" align="middle">
+</p>
 
 <p>Outra limitação apresentada no desenvolvimento do protótipo é o alto custo computacional requerido para aplicação da técnica de 
 aprendizado profundo, necessitando um bom background para o processamento. Os testes desempenhados neste trabalho possuíam tempo duração, 
@@ -56,3 +72,8 @@ em imagens de face humana. A criação do modelo preditivo agrega também relev�
 áreas da sociedade, como por exemplo nas áreas de entretenimento, auxiliando na interação homem máquina, no marketing, através da 
 informação do estado emocional dos clientes para auxiliar na venda, e no monitoramento de pacientes, predizendo sintomas que possuam 
 correlação com o estado emocional, como a depressão.</p>
+
+## Núcleos da 1ª camada convolucional
+<p align="center"> 
+  <img src="imagens/núcleos ativados 64.png" alt="Núclos ativados na primeira camada convolucional" align="middle">
+</p>
