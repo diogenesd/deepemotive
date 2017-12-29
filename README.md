@@ -3,6 +3,8 @@
 ## Trabalho de conclusão de curso - Ciência da Computação  - FURB - 2017
 ### Autor: Diogenes Ademir Domingos<br>
 
+<img src="imagens/arquitetura deepemotive.png" alt="Rede Deep Emotive" align="middle">
+
 Deep-Emotive é um protótipo para reconhecer e classificar as expressões faciais das emoções, alegria, desgosto, medo, raiva, surpresa,
 tristeza, consideradas por Ekman et al. (1987), como básicas e universais, utilizando técnicas já consolidadas das áreas de 
 Processamento Digital de Imagem e Visão Computacional. Estas técnicas são combinadas com uma nova abordagem, considerada a mais avançada
